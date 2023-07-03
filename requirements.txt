@@ -5,3 +5,4 @@ numpy
 pillow
 pickle
 keras_preprocessing
+scikit-learn
