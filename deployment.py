@@ -29,7 +29,7 @@ vgg_model = Model(inputs = vgg_model.inputs, outputs = vgg_model.layers[-2].outp
 
 model = tf.keras.models.load_model("Image_Caption_Generator.h5")
 
-pickle_in = open(",/tokenizer.pickle", "rb")
+pickle_in = open("./tokenizer.pickle", "rb")
 tokenizer = pickle.load(pickle_in)
 
 def ind_to_word (index, tokenizer):
