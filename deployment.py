@@ -71,7 +71,7 @@ img = st.file_uploader("Upload your Image")
 if img and st.button("Check"):
     image = Image.open(img)
     st.image(img)
-    image = ImageOps.fit(image, (224,224), Image.ANTIALIAS)
+    image = ImageOps.fit(image, (224,224), Image.LANCZOS)
     img_array = img_to_array(image)
     capt = gen_caption_image(img_array, vgg_model, model, tokenizer, max_length)
     st.write(capt)
