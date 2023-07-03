@@ -4,3 +4,4 @@ keras
 numpy
 pillow
 pickle
+keras_preprocessing
