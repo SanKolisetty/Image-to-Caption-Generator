@@ -1,16 +1,16 @@
 import streamlit as st
 import tensorflow as tf
 from tensorflow import keras
-import cv2 as cv
+# import cv2 as cv
 import numpy as np
-import matplotlib.pyplot as plt
-from PIL import Image
+# import matplotlib.pyplot as plt
+from PIL import Image, ImageOps
 import os
 import pickle
-import numpy as np
-from tqdm.notebook import tqdm
-import cv2 as cv
-from matplotlib import pyplot as plt
+# import numpy as np
+# from tqdm.notebook import tqdm
+# import cv2 as cv
+# from matplotlib import pyplot as plt
 from tensorflow import keras
 from tensorflow.keras.applications.vgg16 import VGG16, preprocess_input
 from tensorflow.keras.preprocessing.image import load_img, img_to_array
@@ -53,13 +53,7 @@ def predict_caption(model, image, tokenizer, max_length):
             break
     return capt
 
-def gen_caption_image(data_path, vgg_model, model, tokenizer, max_length):   
-    # load the image from file
-    image = Image.open(data_path)
-    plt.imshow(image)
-    img = load_img(data_path, target_size=(224, 224))
-    # convert image to numpy array
-    img = img_to_array(img)
+def gen_caption_image(img, vgg_model, model, tokenizer, max_length):   
     # reshape data for model
     img = img.reshape((1, img.shape[0], img.shape[1], img.shape[2]))
     # preprocess image for vgg
@@ -77,7 +71,8 @@ img = st.file_uploader("Upload your Image")
 if img and st.button("Check"):
     image = Image.open(img)
     st.image(img)
-    image = image.save("test.jpg")
-    capt = gen_caption_image("./test.jpg", vgg_model, model, tokenizer, max_length)
+    image = ImageOps.fit(image, (224,224), Image.ANTIALIAS)
+    img_array = img_to_array(image)
+    capt = gen_caption_image(img_array, vgg_model, model, tokenizer, max_length)
     st.write(capt)
     
