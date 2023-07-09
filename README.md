@@ -10,6 +10,7 @@ Image Caption Generator is a machine learning model that can generate meaningful
 - [Demo](#demo)
 - [Installation](#installation)
 - [Data Sources](#data-sources)
+- [Data Preprocessing](#data-preprocessing)
 - [Model](#model)
 - [Testing and Evaluation](#testing-and-evaluation)
 
@@ -56,6 +57,7 @@ The dataset used was Flickr 8k dataset. It consists of 8,000 images that are eac
 - Flickr 8k Dataset ( [Link](https://www.kaggle.com/datasets/adityajn105/flickr8k) )
 
 # Data Preprocessing
+[(Back to top)](#table-of-contents)
 
 Since we have both image and textual data, they need to be preprocessed separately and still need to be mapped to each other. For this mapping to be possible, we use the file name as the key.
 
