@@ -36,15 +36,11 @@ Open Git Bash and change the directory to the location where the repository is t
 ```shell
   git clone https://github.com/SanKolisetty/Image-to-Caption-Generator.git
 ```
-Now, install the requirements given below.
+Now, install the requirements using the following command.
 
-- Python3 
-- TensorFlow 
-- NumPy
-- Streamlit
-- Keras
-- Pillow
-
+```shell
+   pip install -r requirements.txt 
+```
 To access or use the application, open a terminal in the cloned repository folder and run the following command.
 
 ```shell
@@ -58,6 +54,19 @@ Finally, browse the link provided in your browser.
 The dataset used was Flickr 8k dataset. It consists of 8,000 images that are each paired with five different captions which provide clear descriptions of the salient entities and events. The images were chosen from six different Flickr groups, and tend not to contain any well-known people or locations, but were manually selected to depict a variety of scenes and situations.
 
 - Flickr 8k Dataset ( [Link](https://www.kaggle.com/datasets/adityajn105/flickr8k) )
+
+# Data Preprocessing
+
+Since we have both image and textual data, they need to be preprocessed separately and still need to be mapped to each other. For this mapping to be possible, we use the file name as the key.
+
+- ## Image Data Preprocessing
+
+  For preprocessing images and extracting their features, we used `VGG16` model. The output layer of this model was removed and the image features were extracted.
+
+- ## Text Data Preprocessing
+
+  First, the text data was cleaned by removing special characters, digits, additional spaces etc. and converting everything into lowercase alphabets. For every     caption, `start` and `end` tags were added. Then, the captions were tokenized using `Tokenizer`. This gives an index to every word. Using the `Tokenizer`, the 
+`vocabulary_size` was found which was used as the ouput layer size of the model. The `max_length` of a caption was used to pad sequences.
 
 # Model
 [(Back to top)](#table-of-contents)
