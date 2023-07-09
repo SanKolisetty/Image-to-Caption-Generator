@@ -23,7 +23,7 @@ This project involved building a model that can generate meaningful textual desc
 
 Here is a short demo of the model deployed in streamlit and running on local host.
 
-https://github.com/SanKolisetty/Image-to-Caption-Generator/assets/95172001/fd1d5ec5-e166-4ea5-8fd4-b4b0247750d7
+https://github.com/SanKolisetty/Image-to-Caption-Generator/assets/95172001/7b59912b-d88e-4ef1-b28a-b63c911b9ef1
 
 # Installation
 [(Back to top)](#table-of-contents)
@@ -34,7 +34,7 @@ Open Git Bash and change the directory to the location where the repository is t
   git init
 ```
 ```shell
-  git clone [https://github.com/SanKolisetty/AI-Image-Classifier.git](https://github.com/SanKolisetty/Image-to-Caption-Generator.git)
+  git clone https://github.com/SanKolisetty/Image-to-Caption-Generator.git
 ```
 Now, install the requirements given below.
 
