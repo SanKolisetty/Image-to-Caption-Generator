@@ -71,7 +71,9 @@ Since we have both image and textual data, they need to be preprocessed separate
 # Model
 [(Back to top)](#table-of-contents)
 
-90% of the samples were used for training. The model has two inputs - image features and captions data sequences. The model was trained using LSTMs and the ouput was the probability of each word. The output layer has activation softmax. Thus, for generating captions for any image, the word was found for the index with the maximum probability and it is added to the caption. If the predicted word was `end`, the caption ended.
+The model has two inputs - image features and captions data sequences. Model was trained using LSTMs and the ouput was the probability of each word in the vocabulary. The output layer had activation softmax. 
+
+Thus, for generating captions for any image, the word was found for the index with the maximum probability and it wass added to the caption. If the predicted word was `end`, the caption ended.
 
 # Testing and Evaluation
 [(Back to top)](#table-of-contents)
