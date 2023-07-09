@@ -23,7 +23,7 @@ This project involved building a model that can generate meaningful textual desc
 
 Here is a short demo of the model deployed in streamlit and running on local host.
 
-https://github.com/SanKolisetty/AI-Image-Classifier/assets/95172001/0ebe3ffb-4afe-4a7b-96d3-80ce5e7ce99f
+https://github.com/SanKolisetty/Image-to-Caption-Generator/assets/95172001/fd1d5ec5-e166-4ea5-8fd4-b4b0247750d7
 
 # Installation
 [(Back to top)](#table-of-contents)
@@ -34,7 +34,7 @@ Open Git Bash and change the directory to the location where the repository is t
   git init
 ```
 ```shell
-  git clone https://github.com/SanKolisetty/AI-Image-Classifier.git
+  git clone [https://github.com/SanKolisetty/AI-Image-Classifier.git](https://github.com/SanKolisetty/Image-to-Caption-Generator.git)
 ```
 Now, install the requirements given below.
 
@@ -48,22 +48,16 @@ Now, install the requirements given below.
 To access or use the application, open a terminal in the cloned repository folder and run the following command.
 
 ```shell
-  streamlit run deploy.py
+  streamlit run deployment.py
 ```
 Finally, browse the link provided in your browser.
 
 # Data Sources
 [(Back to top)](#table-of-contents)
 
-The dataset comprised of Real and AI Generated Images. Images were collected from Google using the python library `pygoogle_image`. Every single image was verified to avoid issues such as incorrect and ambigous images. Two other datsets were also used.
+The dataset used was Flickr 8k dataset. It consists of 8,000 images that are each paired with five different captions which provide clear descriptions of the salient entities and events. The images were chosen from six different Flickr groups, and tend not to contain any well-known people or locations, but were manually selected to depict a variety of scenes and situations.
 
-- CIFAKE: Real and AI-Generated Synthetic Images ( [Link](https://www.kaggle.com/datasets/birdy654/cifake-real-and-ai-generated-synthetic-images) )
-- Ai Generated Images | Images Created using AI ( [Link](https://www.kaggle.com/datasets/anasmahmood000/ai-generated-images) )
-
-Combing the three datasets, we have:
-
-- Train Set: 101031
-- Test Set: 20000
+- Flickr 8k Dataset ( [Link](https://www.kaggle.com/datasets/adityajn105/flickr8k) )
 
 # Model
 [(Back to top)](#table-of-contents)
@@ -73,15 +67,6 @@ The CNN model was built similar to `VGG16` and was trained on the train dataset.
 # Testing and Evaluation
 [(Back to top)](#table-of-contents)
 
-On evaluation, model achieved an accuracy of 93.90% 
+On evaluation, model achieved an BLEU Score of 0.53.
 
-Classification Report:
-
-![image](https://github.com/SanKolisetty/AI-Image-Classifier/assets/95172001/e3e898a4-e43a-43fe-9f32-4e3d3aad2329)
-
-Confusion Matrix:
-
-![image](https://github.com/SanKolisetty/AI-Image-Classifier/assets/95172001/846b99e3-7dc7-4fcb-980c-890d380eae3b)
-
-> 0 is Real and 1 is AI Generated
 
