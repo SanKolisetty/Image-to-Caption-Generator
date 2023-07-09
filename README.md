@@ -71,13 +71,15 @@ Since we have both image and textual data, they need to be preprocessed separate
 # Model
 [(Back to top)](#table-of-contents)
 
-The model has two inputs - image features and captions data sequences. Model was trained using LSTMs and the ouput was the probability of each word in the vocabulary. The output layer had activation softmax. 
+The model has two inputs - image features and captions data sequences. Model was trained using LSTMs and the ouput was the probability of each word in the vocabulary. The output layer had activation `softmax`. 
 
-Thus, for generating captions for any image, the word was found for the index with the maximum probability and it wass added to the caption. If the predicted word was `end`, the caption ended.
+Thus, for generating captions for any image, the word was found for the index with the maximum probability and it was added to the caption. If the predicted word was `end`, the caption ended.
+
+> Model architecture and model summary are uploaded.
 
 # Testing and Evaluation
 [(Back to top)](#table-of-contents)
 
-On evaluation, model achieved an BLEU Score of 0.53.
+10% of the samples in the dataset were used for testing. Captions were generated using the trained model and then the `BLEU score` was calculated using these generated captions and the actual captions. On evalutation, the model achieved a `BLEU score` of 0.53.
 
-
+![bleuscore](https://github.com/SanKolisetty/Image-to-Caption-Generator/assets/95172001/2f47fc74-a506-4d32-8000-9e46e7362746)
